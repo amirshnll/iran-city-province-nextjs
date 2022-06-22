@@ -1,8 +1,6 @@
 import Head from "next/head";
-
 import irancities from "/data/iran-cities.json";
 import tehran from "/data/tehran.json";
-import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import { Form, Col } from "react-bootstrap";
 
@@ -41,13 +39,12 @@ export default function Home() {
         <Form>
           <Col>
             <Form.Group className="mb-3" controlId="province-input">
-              <Form.Label className="d-block text-muted">
-                استان <sup className="text-danger">*</sup>
+              <Form.Label>
+                استان 
               </Form.Label>
               <Form.Select
                 defaultValue="تهران"
                 name="province"
-                className="d-block text-muted"
                 onChange={(e) => {
                   handleSelectProvinceChange(e);
                 }}
@@ -62,13 +59,12 @@ export default function Home() {
           </Col>
           <Col>
             <Form.Group className="mb-3" controlId="city-input">
-              <Form.Label className="d-block text-muted">
-                شهر <sup className="text-danger">*</sup>
+              <Form.Label>
+                شهر 
               </Form.Label>
               <Form.Select
                 defaultValue="0"
                 name="city"
-                className="d-block text-muted"
               >
                 {currentcity.length
                   ? currentcity.map((item, i) => (
